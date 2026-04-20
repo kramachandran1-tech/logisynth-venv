@@ -1,5 +1,3 @@
-**Note**: This template is copied into different projects. Before you use it, replace placeholders such as `{project-venv}` and any project-specific repository URLs with your actual project values.
-
 ## Project Environment Setup (Linux (or WSL) / macOS)
 
 WARNING: Windows is not currently supported.
@@ -99,7 +97,16 @@ sudo apt-get install libpython3-dev
 sudo apt-get install python3-venv
 ```
 
-### 0.5) Install OSS CAD Suite, sv2v, and netlistsvg
+### 0.5) Clone this project repo into a folder
+
+```bash
+mkdir Logisynth #Can be any name of your choice
+cd Logisynth
+git clone https://github.com/Sheffield-Chip-Design-Team/logisynth-venv.git
+cd logisynth-venv
+```
+
+### 0.6) Install OSS CAD Suite, sv2v, and netlistsvg
 
 This template uses OSS CAD Suite for the core hardware design tools. It includes Verilator, Icarus Verilog, Yosys, and related utilities in one installation.
 
@@ -141,26 +148,14 @@ Each command should print version information or an installation path.
 
 ### Part 2 - Project Environment Setup
 
-### 0) Clone this project repo into a folder
-```
-mkdir sharc-workshop-1
-cd sharc-workshop-1
-git clone https://github.com/Sheffield-Chip-Design-Team/feworkshop1-venv.git
-```
-
 ### 1) Create and activate a Python virtual environment (venv)
-
-If you are not already in the {project-venv}, `cd` into it:
-```bash
-cd {project-venv}
-```
 Then create the virtual environment. This keeps this project isolated from other projects:
 ```bash
-python3.13 -m venv venv
+python3 -m venv .venv
 ```
 To use the virtual environment, activate it. Do this every time you start a new terminal:
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 If you do not activate the virtual environment, you may accidentally use the system-wide Python environment instead.
 
@@ -178,6 +173,15 @@ Then run the same `source` command for the new project's virtual environment.
 ./scripts/env_check.sh
 ```
 
+### 3) Install Coraltb
+```bash
+./scripts/install_coraltb.sh
+```
+
+### 4) Create Workspace
+```bash
+./scripts/create_workspace.sh
+```
 ## Notes
 All of the checks should appear as `[OK]`. If anything fails, retrace your steps or ask for help.
 
@@ -189,17 +193,6 @@ All of the checks should appear as `[OK]`. If anything fails, retrace your steps
   ```
 
   These commands help you confirm which Python environment is active.
-
-### 3) Install Coraltb
-```bash
-./scripts/install_coraltb.sh
-```
-
-### 4) Create Workspace
-```bash
-./scripts/create_workspace.sh
-```
-
 ### 5) VS Code with WSL
 
 If you are using WSL, open the project from VS Code and install this extension first:
