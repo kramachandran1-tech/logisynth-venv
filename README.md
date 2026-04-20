@@ -60,6 +60,7 @@ To change your current directory:
 ```bash
 cd directory_name
 ```
+For more practice, you may want to try: https://www.terminaltutor.com/
 
 ### 0.2) Install Git
 
@@ -88,7 +89,7 @@ git config --global user.email "you@example.com"
 ```
 Set these to the same credentials used for your GitHub account.
 
-It is strongly recommended that you learn the basics of the Git command line, especially `add`, `commit`, `push`, and `pull`.
+It is strongly recommended that you learn the basics of the Git command line, especially `add`, `commit`, `push`, and `pull`. You may want to try for practice: https://gitmastery.me/
 
 ### 0.4) Install Python venv
 ```bash
@@ -149,6 +150,11 @@ Each command should print version information or an installation path.
 ### Part 2 - Project Environment Setup
 
 ### 1) Create and activate a Python virtual environment (venv)
+
+If you are not already in logisynth-venv, `cd` into it:
+```bash
+cd logisynth-venv
+```
 Then create the virtual environment. This keeps this project isolated from other projects:
 ```bash
 python3 -m venv .venv
@@ -167,21 +173,21 @@ deactivate
 ```
 Then run the same `source` command for the new project's virtual environment.
 
-### 2) Run environment checks
+### 2) Install Coraltb
+```bash
+./scripts/install_coraltb.sh
+```
+
+### 3) Create Workspace
+```bash
+./scripts/create_workspace.sh
+```
+### 4) Run environment checks
 
 ```bash
 ./scripts/env_check.sh
 ```
 
-### 3) Install Coraltb
-```bash
-./scripts/install_coraltb.sh
-```
-
-### 4) Create Workspace
-```bash
-./scripts/create_workspace.sh
-```
 ## Notes
 All of the checks should appear as `[OK]`. If anything fails, retrace your steps or ask for help.
 
