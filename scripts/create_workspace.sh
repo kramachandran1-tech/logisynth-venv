@@ -8,4 +8,4 @@ PARENT_DIR="$(cd "$PROJECT_VENV_DIR/.." && pwd)"
 cd "$PARENT_DIR"
 mkdir workspace
 cd workspace
-fusesoc library add counter https://github.com/Sheffield-Chip-Design-Team/Frontend-Workshop-1.git
+fusesoc library add logisynth https://github.com/Sheffield-Chip-Design-Team/logisynth.git
